@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=yes"/>
+    <meta name="author" content="Sucata Alexandru"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css}">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <title>inBucharest | The Unofficial City Guide</title>
+</head>
+<body>
+<div class="container">
+    <h1>Establishment Types List</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Type</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="establishmentType:${establishmentTypeList}">
+            <td th:text="${establishmentType.typeId}"></td>
+            <td th:text="${establishmentType.type}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <br>
+    <a href="establishment_types/add">Add new establishment type</a>
+</div>
+</body>
+</html>
