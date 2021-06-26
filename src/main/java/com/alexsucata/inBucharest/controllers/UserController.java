@@ -37,7 +37,7 @@ public class UserController {
         return modelAndView;
     }
 
-    @GetMapping("/users/add")
+    @GetMapping("/users/register")
     public ModelAndView addUser() {
         ModelAndView modelAndView = new ModelAndView("users/register");
         modelAndView.addObject("authorityList", authorityRepository.findAll());
